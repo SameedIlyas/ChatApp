@@ -23,8 +23,15 @@ const userSchema = new mongoose.Schema({
     profilePic: {
         type: String,
         default: ""
-    }
-    //createdAt, updatedAt => Member since <createdAt>
+    },
+    friendRequests: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }],
+    friends: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }]
 }, { timestamps: true });
 
 const User = mongoose.model("User", userSchema);

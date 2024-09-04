@@ -16,10 +16,11 @@ const Conversation = ({ conversation, lastIdx, emoji }) => {
 			`}
 				onClick={() => setSelectedConversation(conversation)}
 			>
-				<div className={`avatar ${isOnline ? "online" : ""}`}>
-					<div className='w-12 rounded-full'>
-						<img src={conversation.profilePic} alt='user avatar' />
-					</div>
+				<div className={`relative w-12 h-12 ${isOnline ? "border-2 border-green-400" : ""}`}>
+					<img className='w-full h-full rounded-full' src={conversation.profilePic} alt='user avatar' />
+					{isOnline && (
+						<div className='absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-white'></div>
+					)}
 				</div>
 
 				<div className='flex flex-col flex-1'>
@@ -30,8 +31,9 @@ const Conversation = ({ conversation, lastIdx, emoji }) => {
 				</div>
 			</div>
 
-			{!lastIdx && <div className='divider my-0 py-0 h-1' />}
+			{!lastIdx && <div className='my-1 border-t border-gray-300' />}
 		</>
 	);
 };
+
 export default Conversation;

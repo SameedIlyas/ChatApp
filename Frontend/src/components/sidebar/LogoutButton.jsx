@@ -9,9 +9,12 @@ const LogoutButton = () => {
 			{!loading ? (
 				<BiLogOut className='w-6 h-6 text-white cursor-pointer' onClick={logout} />
 			) : (
-				<span className='loading loading-spinner'></span>
+				<div className='flex justify-center items-center'>
+					<div className='w-6 h-6 border-4 border-t-4 border-gray-300 border-solid rounded-full animate-spin'></div>
+				</div>
 			)}
 		</div>
 	);
 };
+
 export default LogoutButton;

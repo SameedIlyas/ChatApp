@@ -57,3 +57,21 @@ body {
 		transform: translate3d(4px, 0, 0);
 	}
 }
+
+@keyframes pulse {
+	0% {
+	  background-color: rgba(255, 255, 255, 0.2);
+	}
+	50% {
+	  background-color: rgba(255, 255, 255, 0.4);
+	}
+	100% {
+	  background-color: rgba(255, 255, 255, 0.2);
+	}
+  }
+  
+  .skeleton {
+	background-color: rgba(255, 255, 255, 0.2);
+	animation: pulse 1.5s infinite ease-in-out;
+  }
+  
